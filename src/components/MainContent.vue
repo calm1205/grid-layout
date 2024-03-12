@@ -4,11 +4,7 @@ import Card from "./Card.vue";
 
 <template>
   <main>
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
+    <Card v-for="i in [...Array(30)].map((_, i) => i)" :index="i" />
   </main>
 </template>
 
@@ -21,5 +17,6 @@ main {
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 </style>
